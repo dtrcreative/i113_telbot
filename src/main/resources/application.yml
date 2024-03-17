@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: api-telbot-service
+  profiles:
+    active: dev
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:28080/realms/i113_realm
+  messages:
+    always-use-message-format: false
+    basename: messages/messages
+    encoding: UTF-8
+    fallback-to-system-locale: true
+
+#Open-api
+springdoc:
+  api-docs:
+    path: /telbot-docs
+
+#Prometheus
+management:
+  endpoint:
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus,loggers
+  metrics:
+    enable:
+      jvm: true
+
+telegram:
+  botname: i113_assistant_bot
+  bottoken: 6130769269:AAHfY8rS5tB2kSEo0uGwoCgG6SKba797uc8
+  botrootchatid: 425222583
