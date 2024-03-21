@@ -1,7 +1,7 @@
 package com.micro.i113_telbot.model.entity;
 
 import com.micro.i113_telbot.model.UserStatus;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Data
@@ -17,9 +17,7 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NonNull
     private String userId;
-    @NonNull
     private String userSecretCode;
 
     private String chatId;

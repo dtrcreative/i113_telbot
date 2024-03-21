@@ -10,4 +10,5 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
     Optional<UserEntity> findUserEntityByUserSecretCode(@NonNull String userSecretCode);
     Optional<UserEntity> findUserEntityByUserId(@NonNull String userId);
+    Optional<UserEntity> findUserEntityByChatId(String chatId);
 }

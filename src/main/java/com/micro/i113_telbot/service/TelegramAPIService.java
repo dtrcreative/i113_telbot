@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class TelegramService {
+public class TelegramAPIService {
 
     private UserRepository repository;
     private RegistrationConverter converter;

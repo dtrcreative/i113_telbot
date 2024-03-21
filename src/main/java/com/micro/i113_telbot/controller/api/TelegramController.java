@@ -1,7 +1,7 @@
-package com.micro.i113_telbot.controller;
+package com.micro.i113_telbot.controller.api;
 
 import com.micro.i113_telbot.model.dto.TelegramRegisterDto;
-import com.micro.i113_telbot.service.TelegramService;
+import com.micro.i113_telbot.service.TelegramAPIService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/telbot/")
 public class TelegramController {
 
-    private final TelegramService service;
+    private final TelegramAPIService service;
 
-    public TelegramController(TelegramService service) {
+    public TelegramController(TelegramAPIService service) {
         this.service = service;
     }
 
