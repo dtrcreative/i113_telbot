@@ -37,6 +37,3 @@ telegram:
   bottoken: 6130769269:AAHfY8rS5tB2kSEo0uGwoCgG6SKba797uc8
   botrootchatid: 425222583
 
-sheduling:
-  interval-in-cron-morning : 0 0 6 * * ?
-  interval-in-cron-evening : 0 0 18 * * ?
