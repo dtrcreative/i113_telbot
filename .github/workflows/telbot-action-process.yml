@@ -18,9 +18,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1     
 
-      - name: MavenVersion
-        run : |
-          cd i113_gateway
-          ls -la
           
                  
