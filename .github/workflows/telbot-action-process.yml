@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  validating_docker:
+  UpdateTelbotService:
     runs-on: self-hosted
     
     steps:
