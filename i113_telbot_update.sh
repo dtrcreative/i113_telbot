@@ -1,13 +1,17 @@
 #!/bin/bash
-readonly service_name=i113_telbot
-readonly service_image_name=telbot-server
+readonly container_name=i113_telbot
+readonly image_name=telbot-server
 
-echo $service_name
-echo $service_image_name
+echo $container_name
+echo $image_name
 
 docker --version
 
-docker stop $service_name
-docker rm $service_name
-docker rmi $service_image_name
-
+if docker ps -a | grep -- $container_name > /dev/null
+then
+docker stop $container_name
+docker rm $container_name
+docker rmi $image_name
+else
+echo no such container
+fi
