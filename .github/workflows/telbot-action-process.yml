@@ -27,7 +27,7 @@ jobs:
 
       - name: Docker Telbot update
         run : |
-          bash i113_telbot  _update.sh   
+          bash i113_telbot_update.sh   
 
       - name: Docker Compose up
         run : |
