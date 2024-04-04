@@ -42,6 +42,28 @@ public class TelegramAPIService {
         return registerDto;
     }
 
+    public TelegramRegisterDto disableUser(TelegramRegisterDto registerDto){
+        Optional<UserEntity> entity = repository.findUserEntityByUserId(registerDto.getUserId());
+        if(entity.isPresent()){
+            entity.get().setStatus(UserStatus.DISABLED);
+            return converter.convertToDto(repository.save(entity.get()));
+        }
+        return registerDto;
+    }
+
+    public TelegramRegisterDto enableUser(TelegramRegisterDto registerDto){
+        Optional<UserEntity> entity = repository.findUserEntityByUserId(registerDto.getUserId());
+        if(entity.isPresent()){
+            if(entity.get().getChatId()==null){
+                entity.get().setStatus(UserStatus.NOTCONFIRMED);
+            }else {
+                entity.get().setStatus(UserStatus.ACTIVE);
+            }
+            return converter.convertToDto(repository.save(entity.get()));
+        }
+        return registerDto;
+    }
+
     public void handleMultipleDto(List<TelegramMessageDto> dtos){
         for(TelegramMessageDto dto: dtos){
             Optional<UserEntity> user = repository.findUserEntityByUserId(dto.getUserId());

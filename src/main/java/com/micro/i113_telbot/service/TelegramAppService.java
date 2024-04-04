@@ -41,6 +41,9 @@ public class TelegramAppService {
             case REMOVED -> {
                 return telegramConverter.prepareResponse(request, messages.getMessage(messages.REMOVED));
             }
+            case DISABLED -> {
+                return telegramConverter.prepareResponse(request, messages.getMessage(messages.DISABLED));
+            }
             default -> {
                 return telegramConverter.prepareResponse(request, messages.getMessage(messages.ERROR));
             }

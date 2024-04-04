@@ -22,6 +22,7 @@ public class MessageService {
     public final String CONFIRMED = "telegram.registrtion.confirmed";
     public final String UNDEFINED = "telegram.registrtion.undefined";
     public final String REMOVED = "telegram.registrtion.removed";
+    public final String DISABLED = "telegram.answer.disabled";
     public final String ERROR = "telegram.registrtion.error";
     public final String NOCOMMANDSYET = "telegram.answer.nocommands";
 

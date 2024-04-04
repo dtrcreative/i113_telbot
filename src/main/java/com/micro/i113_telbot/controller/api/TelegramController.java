@@ -30,6 +30,15 @@ public class TelegramController {
         return service.register(unitDto);
     }
 
+    @PostMapping("/disable")
+    public TelegramRegisterDto disableUser(@RequestBody TelegramRegisterDto unitDto) {
+        return service.disableUser(unitDto);
+    }
+    @PostMapping("/enable")
+    public TelegramRegisterDto enableUser(@RequestBody TelegramRegisterDto unitDto) {
+        return service.enableUser(unitDto);
+    }
+
     @PostMapping("/")
     public void multipleDto(@RequestBody List<TelegramMessageDto> unitsDtoList) {
         service.handleMultipleDto(unitsDtoList);
