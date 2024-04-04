@@ -15,6 +15,7 @@ public class RegistrationConverter {
         return UserEntity.builder()
                 .userId(inputDTO.getUserId())
                 .userSecretCode(inputDTO.getUserSecretKey())
+                .status(inputDTO.getUserStatus())
                 .build();
     }
 
@@ -22,6 +23,7 @@ public class RegistrationConverter {
         return TelegramRegisterDto.builder()
                 .userId(inputEntity.getUserId())
                 .userSecretKey(inputEntity.getUserSecretCode())
+                .userStatus(inputEntity.getStatus())
                 .build();
     }
 

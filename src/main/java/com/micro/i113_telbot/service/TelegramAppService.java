@@ -26,7 +26,7 @@ public class TelegramAppService {
         defineStatus(request);
         switch (request.getStatus()){
             case ACTIVE -> {
-                return telegramConverter.prepareResponse(request, "ACTIVE");
+                return telegramConverter.prepareResponse(request, messages.getMessage(messages.NOCOMMANDSYET));
             }
             case NOTCONFIRMED -> {
                 confirmUser(request);

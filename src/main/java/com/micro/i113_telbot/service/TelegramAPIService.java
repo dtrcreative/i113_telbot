@@ -24,9 +24,14 @@ public class TelegramAPIService {
     private TelegramBot bot;
 
     public TelegramRegisterDto register(TelegramRegisterDto registerDto){
-        registerDto.setUserSecretKey(generateRandomSecretKey());
-        UserEntity entity = repository.save(converter.convertToEntity(registerDto));
-        return converter.convertToDto(entity);
+        Optional<UserEntity> userEntity = repository.findUserEntityByUserId(registerDto.getUserId());
+        if(userEntity.isEmpty()){
+            registerDto.setUserSecretKey(generateRandomSecretKey());
+            registerDto.setUserStatus(UserStatus.NOTCONFIRMED);
+            UserEntity entity = repository.save(converter.convertToEntity(registerDto));
+            return converter.convertToDto(entity);
+        }
+        return converter.convertToDto(userEntity.get());
     }
 
     public TelegramRegisterDto checkUserStatus(TelegramRegisterDto registerDto){

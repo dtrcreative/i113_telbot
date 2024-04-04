@@ -9,9 +9,9 @@ docker --version
 
 if docker ps -a | grep -- $container_name > /dev/null
 then
-docker stop $container_name
-docker rm $container_name
-docker rmi $image_name
+    docker stop $container_name
+    docker rm $container_name
+    docker rmi $image_name
 else
-echo no such container
+    echo no such container
 fi

@@ -23,6 +23,7 @@ public class MessageService {
     public final String UNDEFINED = "telegram.registrtion.undefined";
     public final String REMOVED = "telegram.registrtion.removed";
     public final String ERROR = "telegram.registrtion.error";
+    public final String NOCOMMANDSYET = "telegram.answer.nocommands";
 
     public String getMessage(String code) {
         return messageSource.getMessage(code, null, Locale.getDefault());
