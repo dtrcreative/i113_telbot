@@ -25,6 +25,7 @@ management:
     web:
       exposure:
         include: health,metrics,prometheus,loggers
+      base-path: /api/telbot/info
   metrics:
     enable:
       jvm: true
