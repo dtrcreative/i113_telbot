@@ -26,11 +26,11 @@ spring:
     user: postgres
     password: postgrespw
     default-schema: telbot
-  security:
-    oauth2:
-      resource-server:
-        jwt:
-          issuer-uri: http://${server.ip}:28080/realms/i113_realm
+#  security:
+#    oauth2:
+#      resource-server:
+#        jwt:
+#          issuer-uri: http://${server.ip}:28080/realms/i113_realm
 
 eureka:
   client:
