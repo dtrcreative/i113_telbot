@@ -1,3 +1,7 @@
+app:
+  delimiter: '=========================='
+  version: '@project.version@'
+
 spring:
   application:
     name: api-telbot-service
